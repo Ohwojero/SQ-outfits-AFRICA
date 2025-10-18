@@ -1,10 +1,3 @@
-# Modernize Testimonials Section
+# TODO: Add Delivery Message to Cart
 
-## Tasks
-- [x] Add more testimonials to the array (aim for 6 total)
-- [x] Change to carousel showing 2 cards at a time, navigate by 2
-- [x] Add beautiful effects and enhanced animations
-- [x] Modernize styling: gradients, shadows, rounded corners, better colors
-- [x] Keep navigation buttons and indicators
-- [x] Ensure responsiveness and accessibility
-ch 
+- [x] Add a creative and attractive delivery message to the cart sidebar footer in components/cart-sidebar.tsx, displaying "🚚 Estimated delivery: 15 days" when items are in the cart.

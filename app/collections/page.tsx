@@ -53,7 +53,7 @@ export default function CollectionsPage() {
             className="text-center mb-12"
           >
             <span className="text-secondary font-bold text-sm tracking-widest mb-4 block">CURATED EXCELLENCE</span>
-            <h1 className="font-serif text-6xl md:text-7xl font-bold mb-6">
+            <h1 className="font-serif text-5xl md:text-6xl font-bold mb-6">
               Masterpieces of <span className="text-secondary">African Craftsmanship</span>
             </h1>
             <p className="text-muted-foreground text-xl max-w-3xl mx-auto leading-relaxed">

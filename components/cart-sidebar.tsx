@@ -124,6 +124,17 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
             {/* Footer */}
             {items.length > 0 && (
               <div className="border-t border-border p-6 space-y-4">
+                {/* Delivery Message */}
+                <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 p-4 rounded-lg border border-blue-200 dark:border-blue-800">
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">🚚</span>
+                    <div>
+                      <p className="font-semibold text-blue-700 dark:text-blue-300">Estimated Delivery</p>
+                      <p className="text-sm text-blue-600 dark:text-blue-400">Your order will arrive in 15 days</p>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Total */}
                 <div className="flex justify-between items-center">
                   <span className="text-muted-foreground">Subtotal:</span>
