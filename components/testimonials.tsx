@@ -53,6 +53,7 @@ export default function Testimonials() {
   const [current, setCurrent] = useState(0)
   const [isHovered, setIsHovered] = useState(false)
   const [showCards, setShowCards] = useState(false)
+  const [cardsPerView, setCardsPerView] = useState(2)
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
@@ -61,13 +62,24 @@ export default function Testimonials() {
       setShowCards(true)
     }, 2000)
 
-    return () => clearTimeout(showTimer)
+    // Set cards per view based on screen size
+    const updateCardsPerView = () => {
+      setCardsPerView(window.innerWidth < 768 ? 1 : 2)
+    }
+
+    updateCardsPerView()
+    window.addEventListener('resize', updateCardsPerView)
+
+    return () => {
+      clearTimeout(showTimer)
+      window.removeEventListener('resize', updateCardsPerView)
+    }
   }, [])
 
   useEffect(() => {
     if (!isHovered && showCards) {
       intervalRef.current = setInterval(() => {
-        setCurrent((prev) => (prev + 2) % testimonials.length)
+        setCurrent((prev) => (prev + cardsPerView) % testimonials.length)
       }, 6000)
     } else {
       if (intervalRef.current) {
@@ -80,19 +92,19 @@ export default function Testimonials() {
         clearInterval(intervalRef.current)
       }
     }
-  }, [isHovered, showCards])
+  }, [isHovered, showCards, cardsPerView])
 
   const next = () => {
-    setCurrent((prev) => (prev + 2) % testimonials.length)
+    setCurrent((prev) => (prev + cardsPerView) % testimonials.length)
   }
 
   const prev = () => {
-    setCurrent((prev) => (prev - 2 + testimonials.length) % testimonials.length)
+    setCurrent((prev) => (prev - cardsPerView + testimonials.length) % testimonials.length)
   }
 
   const getVisibleTestimonials = () => {
     const visible = []
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < cardsPerView; i++) {
       visible.push(testimonials[(current + i) % testimonials.length])
     }
     return visible
@@ -125,13 +137,13 @@ export default function Testimonials() {
               {showCards && getVisibleTestimonials().map((testimonial, position) => (
                 <motion.div
                   key={`${testimonial.name}-${current}-${position}`}
-                  initial={{ opacity: 0, x: position === 0 ? -300 : 300, scale: 0.8 }}
+                  initial={{ opacity: 0, x: cardsPerView === 1 ? 0 : (position === 0 ? -300 : 300), scale: 0.8 }}
                   animate={{
                     opacity: 1,
-                    x: position === 0 ? -100 : 100,
+                    x: cardsPerView === 1 ? 0 : (position === 0 ? -100 : 100),
                     scale: 1,
                   }}
-                  exit={{ opacity: 0, x: position === 0 ? -300 : 300, scale: 0.8 }}
+                  exit={{ opacity: 0, x: cardsPerView === 1 ? 0 : (position === 0 ? -300 : 300), scale: 0.8 }}
                   transition={{ duration: 0.8, ease: "easeInOut" }}
                   className="flex-shrink-0 w-80 md:w-96 mx-2"
                 >
@@ -236,12 +248,12 @@ export default function Testimonials() {
               transition={{ delay: 3, duration: 0.6 }}
               className="flex justify-center gap-3 mt-8"
             >
-              {Array.from({ length: Math.ceil(testimonials.length / 2) }).map((_, index) => (
+              {Array.from({ length: Math.ceil(testimonials.length / cardsPerView) }).map((_, index) => (
                 <motion.button
                   key={index}
-                  onClick={() => setCurrent(index * 2)}
+                  onClick={() => setCurrent(index * cardsPerView)}
                   className={`h-3 rounded-full transition-all duration-300 ${
-                    Math.floor(current / 2) === index
+                    Math.floor(current / cardsPerView) === index
                       ? "bg-gradient-to-r from-primary to-secondary w-12 shadow-lg"
                       : "bg-border/50 w-3 hover:bg-border"
                   }`}

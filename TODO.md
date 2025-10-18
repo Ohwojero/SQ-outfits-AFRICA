@@ -1,8 +1,3 @@
-# TODO: Create Checkout Page
+# TODO: Fix Testimonials Responsiveness
 
-- [x] Create a new checkout page at app/checkout/page.tsx with modern and professional design.
-- [x] Include sections: Order Summary, Customer Information, Shipping Address, Payment Method.
-- [x] Integrate with cart context for order details.
-- [x] Add form validation and responsive design.
-- [x] Update cart-sidebar.tsx to link "Proceed to Checkout" to /checkout page.
-- [x] Create a success page at app/checkout/success/page.tsx for post-checkout confirmation.
+- [x] Update testimonials component to show 1 card on small devices and 2 on larger screens.
