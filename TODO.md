@@ -1,3 +1,8 @@
-# TODO: Add Delivery Message to Cart
+# TODO: Create Checkout Page
 
-- [x] Add a creative and attractive delivery message to the cart sidebar footer in components/cart-sidebar.tsx, displaying "🚚 Estimated delivery: 15 days" when items are in the cart.
+- [x] Create a new checkout page at app/checkout/page.tsx with modern and professional design.
+- [x] Include sections: Order Summary, Customer Information, Shipping Address, Payment Method.
+- [x] Integrate with cart context for order details.
+- [x] Add form validation and responsive design.
+- [x] Update cart-sidebar.tsx to link "Proceed to Checkout" to /checkout page.
+- [x] Create a success page at app/checkout/success/page.tsx for post-checkout confirmation.

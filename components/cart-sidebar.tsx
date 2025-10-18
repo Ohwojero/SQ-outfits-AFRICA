@@ -145,7 +145,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => setIsCheckingOut(true)}
+                  onClick={() => window.location.href = '/checkout'}
                   className="w-full py-3 bg-secondary text-primary font-bold rounded-lg hover:bg-opacity-90 transition-all"
                 >
                   Proceed to Checkout
