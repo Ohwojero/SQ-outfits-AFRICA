@@ -17,7 +17,7 @@ export default function About() {
           >
             <div className="relative h-96 md:h-[500px] rounded-lg overflow-hidden">
               <img
-                src="/tailoring-process-african-craftsman.jpg"
+                src="/sq23.jpeg"
                 alt="Tailoring Process"
                 className="w-full h-full object-cover"
               />

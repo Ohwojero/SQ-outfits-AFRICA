@@ -81,7 +81,7 @@ export default function AboutPage() {
             >
               <div className="relative h-96 md:h-[550px] rounded-xl overflow-hidden shadow-2xl">
                 <img
-                  src="/master-tailor-crafting-luxury-african-garment.jpg"
+                  src="/sq24.jpeg"
                   alt="Master Tailor at Work"
                   className="w-full h-full object-cover"
                 />

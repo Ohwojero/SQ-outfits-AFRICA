@@ -8,19 +8,19 @@ const heroSlides = [
   {
     title: "Bespoke Elegance",
     subtitle: "Handcrafted luxury tailoring from Accra, Ghana",
-    image: "/caro4.jpeg",
+    image: "/sq1.jpeg",
     cta: "Shop Kaftans",
   },
   {
     title: "Timeless Agbada",
     subtitle: "Traditional meets contemporary in every stitch",
-    image: "/caro5.jpeg",
+    image: "/sq2.jpeg",
     cta: "Explore Agbada",
   },
   {
     title: "Political Prestige",
     subtitle: "Tailored for leaders and visionaries",
-    image: "/caro3.jpeg",
+    image: "/sq3.jpeg",
     cta: "View Political Suits",
   },
 ]

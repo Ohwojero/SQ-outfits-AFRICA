@@ -19,7 +19,7 @@ export default function VideoPlayer() {
         >
           <div className="relative w-full aspect-video bg-gradient-to-br from-secondary/20 to-primary/20 rounded-2xl overflow-hidden shadow-2xl">
             <img
-              src="/luxury-african-fashion-brand-video-thumbnail.jpg"
+              src="/sq25.jpeg"
               alt="SQ-Outfits AFRICA Brand Video"
               className="w-full h-full object-cover"
             />

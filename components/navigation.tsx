@@ -43,7 +43,7 @@ export default function Navigation({ isDark }: NavigationProps) {
               <Link href="/" className="flex items-center gap-2">
                 <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center">
                   {/* <span className="font-serif font-bold text-primary text-lg">SQ</span> */}
-                  <img src="/logo1.jpeg" alt="" className="font-serif font-bold text-primary text-lg rounded-full"  />
+                  <img src="/sq26.jpeg" alt="" className="font-serif font-bold text-primary text-lg rounded-full"  />
                 </div>
                 <span className="font-serif font-bold text-xl hidden sm:inline">Outfits</span>
               </Link>
